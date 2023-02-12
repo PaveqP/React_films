@@ -14,7 +14,7 @@ const Main = () => {
     const searchFunc = (name, type ='all') => {
         setLoading(true);
 
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${name}${type !== 'all' ? `&type=${type}` : ''}`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${name}${type !== 'all' ? `&type=${type}` : ''}`)
             .then(response => response.json())
             .then(data => {
                 setLoading(false);
@@ -27,7 +27,7 @@ const Main = () => {
     }
 
     React.useEffect(() => {
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
         .then(response => response.json())
         .then(data => {
             setMovies(data.Search);
